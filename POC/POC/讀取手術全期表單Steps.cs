@@ -63,16 +63,18 @@ namespace POC
             ScenarioContext.Current.Set(result, "result");
         }
 
-        [Then(@"得到空白表單，名稱：""(.*)""，欄位明細")]
-        public void Then得到空白表單名稱欄位明細(string expectedFormName, Table expectedContents)
+        [Then(@"得到表單內容")]
+        public void Then得到表單內容(Table table)
         {
-            var expectedForm = new FormBase();
-            expectedForm.Name = expectedFormName;
-            expectedForm.Contents = expectedContents.CreateSet<ColumnBase>();
-
             var actualForm = ScenarioContext.Current.Get<FormBase>("result");
+            table.CompareToInstance(actualForm);
+        }
 
-            expectedForm.ToExpectedObject().ShouldEqual(actualForm);
+        [Then(@"得到表單欄位")]
+        public void Then得到表單欄位明細(Table table)
+        {
+            var actualContents = ScenarioContext.Current.Get<FormBase>("result").Contents;
+            table.CompareToSet(actualContents);
         }
 
     }

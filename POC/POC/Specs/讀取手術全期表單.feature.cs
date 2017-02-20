@@ -110,9 +110,16 @@ testRunner.When("表單名稱：\"表單01\"，按下新增表單", ((string)(nu
             TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
                         "Name"});
             table3.AddRow(new string[] {
-                        "欄位01"});
+                        "表單01"});
 #line 19
-testRunner.Then("得到空白表單，名稱：\"表單01\"，欄位明細", ((string)(null)), table3, "Then ");
+testRunner.Then("得到表單內容", ((string)(null)), table3, "Then ");
+#line hidden
+            TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Name"});
+            table4.AddRow(new string[] {
+                        "欄位01"});
+#line 22
+testRunner.Then("得到表單欄位", ((string)(null)), table4, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
