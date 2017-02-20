@@ -10,9 +10,9 @@ Given 表單定義
 | Name | 
 | 表單01 |
 Given 欄位定義
-| Name | FormName |
-| 欄位01 | 表單01     |
-| 欄位02 | 表單01     |
+| Name | FormName | Type         |
+| 欄位01 | 表單01     | StringColumn |
+| 欄位02 | 表單01     | CheckColumn  |
 
 When 表單名稱："表單01"，按下新增表單
 
@@ -23,4 +23,7 @@ Then 得到表單欄位
 | Name |
 | 欄位01 |
 | 欄位02 |
-
+Then 表單欄位型別
+| ColumnType   |
+| StringColumn |
+| CheckColumn  |

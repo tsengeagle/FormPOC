@@ -77,5 +77,18 @@ namespace POC
             table.CompareToSet(actualContents);
         }
 
+        [Then(@"表單欄位型別")]
+        public void Then表單欄位型別(Table table)
+        {
+            ScenarioContext.Current.Pending();
+            
+            var actualContents = ScenarioContext.Current.Get<FormBase>("result").Contents;
+            var expectedTypes = table.CreateSet<string>();
+            foreach (var typeName in expectedTypes)
+            {
+
+            }
+        }
+
     }
 }

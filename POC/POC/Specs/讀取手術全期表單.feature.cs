@@ -95,13 +95,16 @@ testRunner.Given("表單定義", ((string)(null)), table1, "Given ");
 #line hidden
             TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
                         "Name",
-                        "FormName"});
+                        "FormName",
+                        "Type"});
             table2.AddRow(new string[] {
                         "欄位01",
-                        "表單01"});
+                        "表單01",
+                        "StringColumn"});
             table2.AddRow(new string[] {
                         "欄位02",
-                        "表單01"});
+                        "表單01",
+                        "CheckColumn"});
 #line 12
 testRunner.Given("欄位定義", ((string)(null)), table2, "Given ");
 #line 17
@@ -122,6 +125,15 @@ testRunner.Then("得到表單內容", ((string)(null)), table3, "Then ");
                         "欄位02"});
 #line 22
 testRunner.Then("得到表單欄位", ((string)(null)), table4, "Then ");
+#line hidden
+            TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
+                        "ColumnType"});
+            table5.AddRow(new string[] {
+                        "StringColumn"});
+            table5.AddRow(new string[] {
+                        "CheckColumn"});
+#line 26
+testRunner.Then("表單欄位型別", ((string)(null)), table5, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
