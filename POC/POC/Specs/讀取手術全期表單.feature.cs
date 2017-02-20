@@ -79,10 +79,10 @@ testRunner.Then("得到空白表單", ((string)(null)), ((TechTalk.SpecFlow.Tabl
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("啟動測試表單01")]
-        public virtual void 啟動測試表單01()
+        [NUnit.Framework.DescriptionAttribute("依照定義取得空白表單")]
+        public virtual void 依照定義取得空白表單()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("啟動測試表單01", ((string[])(null)));
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("依照定義取得空白表單", ((string[])(null)));
 #line 8
 this.ScenarioSetup(scenarioInfo);
 #line hidden
@@ -101,7 +101,7 @@ testRunner.Given("表單定義", ((string)(null)), table1, "Given ");
                         "表單01"});
             table2.AddRow(new string[] {
                         "欄位02",
-                        "表單02"});
+                        "表單01"});
 #line 12
 testRunner.Given("欄位定義", ((string)(null)), table2, "Given ");
 #line 17
@@ -118,6 +118,8 @@ testRunner.Then("得到表單內容", ((string)(null)), table3, "Then ");
                         "Name"});
             table4.AddRow(new string[] {
                         "欄位01"});
+            table4.AddRow(new string[] {
+                        "欄位02"});
 #line 22
 testRunner.Then("得到表單欄位", ((string)(null)), table4, "Then ");
 #line hidden
