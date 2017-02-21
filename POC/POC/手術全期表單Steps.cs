@@ -10,24 +10,8 @@ using TechTalk.SpecFlow.Assist;
 namespace POC
 {
     [Binding]
-    public class 讀取手術全期表單Steps
+    public class 手術全期表單Steps
     {
-        [When(@"按下新增表單")]
-        public void When按下新增表單()
-        {
-            var target = new FormFactory();
-            var result = target.GetPeriopForm();
-            ScenarioContext.Current.Set(result, "result");
-        }
-
-        [Then(@"得到空白表單")]
-        public void Then得到空白表單()
-        {
-            var expected = new FormBase();
-            var actual = ScenarioContext.Current.Get<FormBase>("result");
-            expected.ToExpectedObject().ShouldEqual(actual);
-        }
-
         [Given(@"表單定義")]
         public void Given表單定義(Table givenFormDefine)
         {

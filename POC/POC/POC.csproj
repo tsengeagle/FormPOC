@@ -91,7 +91,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>讀取手術全期表單.feature</DependentUpon>
     </Compile>
-    <Compile Include="讀取手術全期表單Steps.cs" />
+    <Compile Include="手術全期表單Steps.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

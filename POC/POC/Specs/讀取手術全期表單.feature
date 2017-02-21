@@ -1,10 +1,6 @@
 ﻿Feature: 讀取手術全期表單
 
 
-Scenario: 啟動空白表單
-When 按下新增表單
-Then 得到空白表單
-
 Scenario: 依照定義取得空白表單
 Given 表單定義
 | Name | 
@@ -24,3 +20,4 @@ Then 得到表單欄位
 | 欄位01 | StringColumn |
 | 欄位02 | CheckColumn  |
 Then 欄位："欄位01"，型別："StringColumn"
+Then 欄位："欄位02"，型別："CheckColumn"

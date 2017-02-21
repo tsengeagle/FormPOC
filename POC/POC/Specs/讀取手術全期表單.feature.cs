@@ -64,33 +64,18 @@ namespace POC.Specs
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("啟動空白表單")]
-        public virtual void 啟動空白表單()
-        {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("啟動空白表單", ((string[])(null)));
-#line 4
-this.ScenarioSetup(scenarioInfo);
-#line 5
-testRunner.When("按下新增表單", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 6
-testRunner.Then("得到空白表單", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-            this.ScenarioCleanup();
-        }
-        
-        [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("依照定義取得空白表單")]
         public virtual void 依照定義取得空白表單()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("依照定義取得空白表單", ((string[])(null)));
-#line 8
+#line 4
 this.ScenarioSetup(scenarioInfo);
 #line hidden
             TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
                         "Name"});
             table1.AddRow(new string[] {
                         "表單01"});
-#line 9
+#line 5
 testRunner.Given("表單定義", ((string)(null)), table1, "Given ");
 #line hidden
             TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
@@ -105,16 +90,16 @@ testRunner.Given("表單定義", ((string)(null)), table1, "Given ");
                         "欄位02",
                         "表單01",
                         "CheckColumn"});
-#line 12
+#line 8
 testRunner.Given("欄位定義", ((string)(null)), table2, "Given ");
-#line 17
+#line 13
 testRunner.When("表單名稱：\"表單01\"，按下新增表單", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
                         "Name"});
             table3.AddRow(new string[] {
                         "表單01"});
-#line 19
+#line 15
 testRunner.Then("得到表單內容", ((string)(null)), table3, "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
@@ -126,10 +111,12 @@ testRunner.Then("得到表單內容", ((string)(null)), table3, "Then ");
             table4.AddRow(new string[] {
                         "欄位02",
                         "CheckColumn"});
-#line 22
+#line 18
 testRunner.Then("得到表單欄位", ((string)(null)), table4, "Then ");
-#line 26
+#line 22
 testRunner.Then("欄位：\"欄位01\"，型別：\"StringColumn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 23
+testRunner.Then("欄位：\"欄位02\"，型別：\"CheckColumn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
