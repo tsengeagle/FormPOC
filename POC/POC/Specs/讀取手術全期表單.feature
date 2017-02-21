@@ -10,7 +10,7 @@ Given 表單定義
 | Name | 
 | 表單01 |
 Given 欄位定義
-| Name | FormName | Type         |
+| Name | FormName | ColumnType   |
 | 欄位01 | 表單01     | StringColumn |
 | 欄位02 | 表單01     | CheckColumn  |
 
@@ -20,10 +20,7 @@ Then 得到表單內容
 | Name |
 | 表單01 |
 Then 得到表單欄位
-| Name |
-| 欄位01 |
-| 欄位02 |
-Then 表單欄位型別
-| ColumnType   |
-| StringColumn |
-| CheckColumn  |
+| Name |  ColumnType   |
+| 欄位01 | StringColumn |
+| 欄位02 | CheckColumn  |
+Then 欄位："欄位01"，型別："StringColumn"

@@ -30,7 +30,8 @@ namespace POC
             var columnResult = new List<ColumnBase>();
             foreach (var item in formDefine.ColumnDefine)
             {
-                var column = new ColumnBase { Name = item.Name };
+                var column = new ColumnBase();
+                column = GetColumn(item);
 
                 columnResult.Add(column);
             }
@@ -38,6 +39,25 @@ namespace POC
             formResult.Contents = columnResult.AsEnumerable();
 
             return formResult;
+        }
+
+        private ColumnBase GetColumn(ColumnDefine item)
+        {
+            ColumnBase columnResult = null;
+
+            switch (item.ColumnType)
+            {
+                case "StringColumn":
+                    columnResult=new StringColumn() {Name = item.Name,ColumnType = item.ColumnType};
+                    break;
+                case "CheckColumn":
+                    columnResult = new CheckColumn() { Name = item.Name, ColumnType = item.ColumnType };
+                    break;
+                case "":
+                    break;
+            }
+
+            return columnResult;
         }
     }
 }

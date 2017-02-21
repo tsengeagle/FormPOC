@@ -77,16 +77,18 @@ namespace POC
             table.CompareToSet(actualContents);
         }
 
-        [Then(@"表單欄位型別")]
-        public void Then表單欄位型別(Table table)
+        [Then(@"欄位：""(.*)""，型別：""(.*)""")]
+        public void Then欄位型別(string expectedColumnName, string expectedTypeName)
         {
-            ScenarioContext.Current.Pending();
-            
             var actualContents = ScenarioContext.Current.Get<FormBase>("result").Contents;
-            var expectedTypes = table.CreateSet<string>();
-            foreach (var typeName in expectedTypes)
+            if (actualContents.Count(w => w.Name == expectedColumnName) > 0)
             {
-
+                var actualColumn = actualContents.First(w => w.Name == expectedColumnName);
+                Assert.AreEqual(expectedTypeName, actualColumn.GetType().Name);
+            }
+            else
+            {
+                Assert.Fail("沒有欄位：" + expectedColumnName);
             }
         }
 
