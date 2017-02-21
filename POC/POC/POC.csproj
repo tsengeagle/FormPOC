@@ -84,19 +84,19 @@
     <Compile Include="IFormDAO.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Specs\讀取手術全期表單.feature.cs">
+    <Compile Include="Specs\依定義產生表單.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>讀取手術全期表單.feature</DependentUpon>
+      <DependentUpon>依定義產生表單.feature</DependentUpon>
     </Compile>
-    <Compile Include="手術全期表單Steps.cs" />
+    <Compile Include="表單與欄位工廠Steps.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
-    <None Include="Specs\讀取手術全期表單.feature">
+    <None Include="Specs\依定義產生表單.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>讀取手術全期表單.feature.cs</LastGenOutput>
+      <LastGenOutput>依定義產生表單.feature.cs</LastGenOutput>
     </None>
   </ItemGroup>
   <ItemGroup>

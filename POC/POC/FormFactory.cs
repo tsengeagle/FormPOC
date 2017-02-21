@@ -48,10 +48,10 @@ namespace POC
             switch (item.ColumnType)
             {
                 case "StringColumn":
-                    columnResult=new StringColumn() {Name = item.Name,ColumnType = item.ColumnType};
+                    columnResult = new StringColumn() { Name = item.Name, Content = item.DefaultContent };
                     break;
                 case "CheckColumn":
-                    columnResult = new CheckColumn() { Name = item.Name, ColumnType = item.ColumnType };
+                    columnResult = new CheckColumn(item);
                     break;
                 case "":
                     break;

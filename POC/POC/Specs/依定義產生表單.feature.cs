@@ -24,7 +24,7 @@ namespace POC.Specs
         
         private TechTalk.SpecFlow.ITestRunner testRunner;
         
-#line 1 "讀取手術全期表單.feature"
+#line 1 "依定義產生表單.feature"
 #line hidden
         
         [NUnit.Framework.TestFixtureSetUpAttribute()]
@@ -81,15 +81,18 @@ testRunner.Given("表單定義", ((string)(null)), table1, "Given ");
             TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
                         "Name",
                         "FormName",
-                        "ColumnType"});
+                        "ColumnType",
+                        "DefaultContent"});
             table2.AddRow(new string[] {
                         "欄位01",
                         "表單01",
-                        "StringColumn"});
+                        "StringColumn",
+                        "string content"});
             table2.AddRow(new string[] {
                         "欄位02",
                         "表單01",
-                        "CheckColumn"});
+                        "CheckColumn",
+                        "check box"});
 #line 8
 testRunner.Given("欄位定義", ((string)(null)), table2, "Given ");
 #line 13
@@ -103,20 +106,31 @@ testRunner.When("表單名稱：\"表單01\"，按下新增表單", ((string)(nu
 testRunner.Then("得到表單內容", ((string)(null)), table3, "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Name",
-                        "ColumnType"});
+                        "Name"});
             table4.AddRow(new string[] {
-                        "欄位01",
-                        "StringColumn"});
+                        "欄位01"});
             table4.AddRow(new string[] {
-                        "欄位02",
-                        "CheckColumn"});
+                        "欄位02"});
 #line 18
 testRunner.Then("得到表單欄位", ((string)(null)), table4, "Then ");
+#line hidden
+            TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Name",
+                        "Content"});
+            table5.AddRow(new string[] {
+                        "欄位01",
+                        "string content"});
 #line 22
-testRunner.Then("欄位：\"欄位01\"，型別：\"StringColumn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 23
-testRunner.Then("欄位：\"欄位02\"，型別：\"CheckColumn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+testRunner.Then("字串欄位：\"欄位01\"", ((string)(null)), table5, "Then ");
+#line hidden
+            TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Name",
+                        "Content"});
+            table6.AddRow(new string[] {
+                        "欄位02",
+                        "check box"});
+#line 25
+testRunner.Then("選擇盒子欄位：\"欄位02\"", ((string)(null)), table6, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

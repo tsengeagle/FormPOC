@@ -10,7 +10,7 @@ using TechTalk.SpecFlow.Assist;
 namespace POC
 {
     [Binding]
-    public class 手術全期表單Steps
+    public class 表單與欄位工廠Steps
     {
         [Given(@"表單定義")]
         public void Given表單定義(Table givenFormDefine)
@@ -74,6 +74,22 @@ namespace POC
             {
                 Assert.Fail("沒有欄位：" + expectedColumnName);
             }
+        }
+
+        [Then(@"字串欄位：""(.*)""")]
+        public void Then字串欄位(string columnName, Table table)
+        {
+            var actualColumn = ScenarioContext.Current.Get<FormBase>("result").Contents.First(f => f.Name == columnName);
+            Assert.AreEqual(typeof(StringColumn).Name, actualColumn.GetType().Name);
+            table.CompareToInstance((StringColumn)actualColumn);
+        }
+
+        [Then(@"選擇盒子欄位：""(.*)""")]
+        public void Then選擇盒子欄位(string columnName, Table table)
+        {
+            var actualColumn = ScenarioContext.Current.Get<FormBase>("result").Contents.First(f => f.Name == columnName);
+            Assert.AreEqual(typeof(CheckColumn).Name, actualColumn.GetType().Name);
+            table.CompareToInstance((CheckColumn)actualColumn);
         }
 
     }
