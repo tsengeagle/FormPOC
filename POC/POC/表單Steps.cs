@@ -27,8 +27,8 @@ namespace POC
             ScenarioContext.Current.Set(colDefine, "colDefine");
         }
 
-        [When(@"取得表單：""(.*)""")]
-        public void When取得表單(string formName)
+        [When(@"取得表單組件：""(.*)""")]
+        public void When取得表單組件(string formName)
         {
             var formDefine = ScenarioContext.Current.Get<IEnumerable<FormDefine>>("formDefine").First(w => w.Name == formName);
             var colDefine = ScenarioContext.Current.Get<IEnumerable<ColumnDefine>>("colDefine").Where(w => w.FormName == formName);
@@ -43,8 +43,8 @@ namespace POC
             ScenarioContext.Current.Set(resultForm, "resultForm");
         }
 
-        [Then(@"得到表單：""(.*)""，欄位：")]
-        public void Then得到表單欄位(string expectedFormName, Table table)
+        [Then(@"得到表單組件：""(.*)""，欄位：")]
+        public void Then得到表單組件欄位(string expectedFormName, Table table)
         {
             var actual = ScenarioContext.Current.Get<FormBase>("resultForm");
             Assert.AreEqual(expectedFormName, actual.Name);

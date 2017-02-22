@@ -64,10 +64,10 @@ namespace POC.Specs
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("依據定義產生表單")]
-        public virtual void 依據定義產生表單()
+        [NUnit.Framework.DescriptionAttribute("依據定義產生表單組件")]
+        public virtual void 依據定義產生表單組件()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("依據定義產生表單", ((string[])(null)));
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("依據定義產生表單組件", ((string[])(null)));
 #line 4
 this.ScenarioSetup(scenarioInfo);
 #line hidden
@@ -99,7 +99,7 @@ testRunner.Given("表單定義", ((string)(null)), table1, "Given ");
 #line 9
 testRunner.Given("欄位定義", ((string)(null)), table2, "Given ");
 #line 15
-testRunner.When("取得表單：\"Form01\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+testRunner.When("取得表單組件：\"Form01\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
                         "Name",
@@ -111,7 +111,7 @@ testRunner.When("取得表單：\"Form01\"", ((string)(null)), ((TechTalk.SpecFl
                         "Col02",
                         "test 2"});
 #line 17
-testRunner.Then("得到表單：\"Form01\"，欄位：", ((string)(null)), table3, "Then ");
+testRunner.Then("得到表單組件：\"Form01\"，欄位：", ((string)(null)), table3, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
