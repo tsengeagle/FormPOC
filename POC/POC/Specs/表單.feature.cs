@@ -75,6 +75,8 @@ this.ScenarioSetup(scenarioInfo);
                         "Name"});
             table1.AddRow(new string[] {
                         "Form01"});
+            table1.AddRow(new string[] {
+                        "Form02"});
 #line 5
 testRunner.Given("表單定義", ((string)(null)), table1, "Given ");
 #line hidden
@@ -85,10 +87,18 @@ testRunner.Given("表單定義", ((string)(null)), table1, "Given ");
             table2.AddRow(new string[] {
                         "Col01",
                         "Form01",
-                        "test"});
-#line 8
+                        "test 1"});
+            table2.AddRow(new string[] {
+                        "Col02",
+                        "Form01",
+                        "test 2"});
+            table2.AddRow(new string[] {
+                        "Col01",
+                        "Form02",
+                        "ttttt"});
+#line 9
 testRunner.Given("欄位定義", ((string)(null)), table2, "Given ");
-#line 12
+#line 15
 testRunner.When("取得表單：\"Form01\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
@@ -96,8 +106,11 @@ testRunner.When("取得表單：\"Form01\"", ((string)(null)), ((TechTalk.SpecFl
                         "Value"});
             table3.AddRow(new string[] {
                         "Col01",
-                        "test"});
-#line 14
+                        "test 1"});
+            table3.AddRow(new string[] {
+                        "Col02",
+                        "test 2"});
+#line 17
 testRunner.Then("得到表單：\"Form01\"，欄位：", ((string)(null)), table3, "Then ");
 #line hidden
             this.ScenarioCleanup();

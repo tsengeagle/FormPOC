@@ -30,11 +30,7 @@ namespace POC
         [When(@"取得表單：""(.*)""")]
         public void When取得表單(string formName)
         {
-            if (ScenarioContext.Current.ContainsKey("formDefine"))
-            {
-
-            }
-            var formDefine = ScenarioContext.Current.Get<IEnumerable<FormDefine>>("formDefine").FirstOrDefault(w => w.Name == formName);
+            var formDefine = ScenarioContext.Current.Get<IEnumerable<FormDefine>>("formDefine").First(w => w.Name == formName);
             var colDefine = ScenarioContext.Current.Get<IEnumerable<ColumnDefine>>("colDefine").Where(w => w.FormName == formName);
             formDefine.Columns = colDefine;
 
