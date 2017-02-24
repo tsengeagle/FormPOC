@@ -1,0 +1,22 @@
+=> POC.Specs.產生空白表單Feature.依據定義產生表單組件
+Given 表單定義
+  --- table step argument ---
+  | Name   |
+  | Form01 |
+  | Form02 |
+-> done: 產生空白表單Steps.Given表單定義(<table>) (0.0s)
+Given 欄位定義
+  --- table step argument ---
+  | Name  | FormName | DefaultValue |
+  | Col01 | Form01   | test 1       |
+  | Col02 | Form01   | test 2       |
+  | Col01 | Form02   | ttttt        |
+-> done: 產生空白表單Steps.Given欄位定義(<table>) (0.0s)
+When 取得表單組件："Form01"
+-> done: 產生空白表單Steps.When取得表單組件("Form01") (0.3s)
+Then 得到表單組件："Form01"，欄位：
+  --- table step argument ---
+  | Name  | Value  |
+  | Col01 | test 1 |
+  | Col02 | test 2 |
+-> done: 產生空白表單Steps.Then得到表單組件欄位("Form01", <table>) (0.0s)
